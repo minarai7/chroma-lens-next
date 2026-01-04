@@ -1,0 +1,81 @@
+.navDrawer {
+  position: fixed;
+  z-index: 999;
+  width: 360px;
+  right: 0;
+  top: 0;
+  background: var(--menu);
+  height: 100vh;
+  padding: 1em;
+  transform: translateX(100%);
+  transition: transform 500ms ease;
+}
+
+.navDrawer.active {
+  transform: translateX(0);
+}
+
+.navDrawer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.navDrawer a {
+  display: block;
+  border-radius: 4px;
+  padding: 0.5em;
+  color: var(--text);
+  text-decoration: none;
+  text-align: right;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.navDrawer a:hover {
+  color: var(--highlight);
+  background: var(--bg);
+}
+
+.navDrawer a.active {
+  color: var(--highlight);
+  background: var(--menu);
+}
+
+.navDrawer a.active:hover {
+  color: var(--highlight);
+  background: var(--menu);
+}
+
+.mobileMenuButton {
+  all: unset;
+  padding: 0.3rem;
+  color: var(--text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobileMenuButton:hover {
+  color: var(--highlight);
+}
+
+.mobileMenuButton:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.menuIcon {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.menuIcon .line {
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  transform-origin: center;
+}
