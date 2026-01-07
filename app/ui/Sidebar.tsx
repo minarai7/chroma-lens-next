@@ -1,15 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useContext } from "react";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import styles from "./Sidebar.module.css";
+import { LanguageContext } from "../layout";
 
 export default function Sidebar() {
   const [open, setOpen] = useState(false);
   const drawerRef = useRef<HTMLElement | null>(null);
   const pathname = usePathname();
+  const { lang } = useContext(LanguageContext);
 
   // Close drawer on outside click
   useEffect(() => {
@@ -29,7 +31,7 @@ export default function Sidebar() {
       <button
         id="mobile-menu-button"
         className={styles.mobileMenuButton}
-        aria-label="Open menu"
+        aria-label={lang === "EN" ? "Open menu" : "メニューを開く"}
         onClick={(e) => {
           e.stopPropagation();
           setOpen((v) => !v);
@@ -61,7 +63,7 @@ export default function Sidebar() {
               className={clsx({ [styles.active]: pathname === "/" })}
               onClick={() => setOpen(false)}
             >
-              Home
+              {lang === "EN" ? "Home" : "ホーム"}
             </Link>
           </li>
           <li>
@@ -70,7 +72,7 @@ export default function Sidebar() {
               className={clsx({ [styles.active]: pathname === "/history" })}
               onClick={() => setOpen(false)}
             >
-              History
+              {lang === "EN" ? "History" : "履歴"}
             </Link>
           </li>
           <li>
@@ -79,7 +81,7 @@ export default function Sidebar() {
               className={clsx({ [styles.active]: pathname === "/help" })}
               onClick={() => setOpen(false)}
             >
-              Help
+              {lang === "EN" ? "Help" : "ヘルプ"}
             </Link>
           </li>
         </ul>
