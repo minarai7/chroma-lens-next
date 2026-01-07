@@ -1,5 +1,7 @@
+"use client";
+
 import { useContext } from "react";
-import { LanguageContext } from "../layout";
+import { LanguageContext } from "../ui/ClientProvider";
 
 export default function HelpPage() {
   const { lang } = useContext(LanguageContext);

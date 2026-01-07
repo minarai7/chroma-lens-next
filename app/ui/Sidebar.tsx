@@ -5,7 +5,7 @@ import { useEffect, useRef, useState, useContext } from "react";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import styles from "./Sidebar.module.css";
-import { LanguageContext } from "../layout";
+import { LanguageContext } from "./ClientProvider";
 
 export default function Sidebar() {
   const [open, setOpen] = useState(false);

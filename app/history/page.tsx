@@ -1,6 +1,8 @@
+"use client";
+
 import { useContext } from "react";
 import HistoryGrid from "../ui/HistoryGrid";
-import { LanguageContext } from "../layout";
+import { LanguageContext } from "../ui/ClientProvider";
 
 export default function HistoryPage() {
   const { lang } = useContext(LanguageContext);

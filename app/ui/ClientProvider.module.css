@@ -1,0 +1,21 @@
+.language-toggle {
+    display: inline-flex;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #2a2f3a;
+  }
+  
+  .language-toggle button {
+    border-radius: 0;
+    border: none;
+    background: var(--menu);
+  }
+  
+  .language-toggle button + button {
+    border-left: 1px solid #2a2f3a;
+    background: var(--menu);
+  }
+  
+  .language-toggle button:hover {
+    color: var(--highlight);
+  }

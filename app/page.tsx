@@ -3,11 +3,12 @@
 import { Suspense, useState, useContext } from "react";
 import UploadBox from "./ui/UploadBox";
 import PaletteGrid from "./ui/PaletteGrid";
-import { LanguageContext } from "./layout";
+import { LanguageContext } from "./ui/ClientProvider";
 
 export default function HomePage() {
   const [analysisResult, setAnalysisResult] = useState<any>(null);
-  const { lang } = useContext(LanguageContext);
+  const languageContext = useContext(LanguageContext);
+  const lang = languageContext?.lang || "EN"; // Default to "EN" if context is undefined
 
   return (
     <main className="app-main">
